@@ -8,3 +8,18 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+/* 스크롤바 디자인 (밝은 테마에 맞게 수정) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* secondary-dark */
+}
+::-webkit-scrollbar-thumb {
+  background: #facc15; /* accent-gold */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #eab308; /* accent-gold-darker */
+}

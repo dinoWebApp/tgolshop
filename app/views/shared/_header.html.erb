@@ -1,25 +1,13 @@
-<div class="navbar shadow">
-  <nav class="container mx-auto flex justify-around items-center py-3 px-5 md:px-0">
-    <div class="flex items-center">
-      <div class="logo">
-        <%= image_tag 'tgolshop.png', alt: "로고", class: "md:h-14 h-10 w-auto" %>
-      </div>
+<header class="sticky top-0 z-50 w-full bg-theme-prime-dark/80 backdrop-blur-md border-b border-gray-800/50">
+  <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <%# 로고 %>
+    <%= link_to "TGOLSHOP", "/", class: "text-3xl font-black text-white tracking-tighter" %>
+    <%# PC 네비게이션 %>
+    <div class="hidden md:flex items-center space-x-8">
+      <%= link_to "드라이버", "/", class: "custom-nav-item-selected"%>
+      <%= link_to "아이언", "/", class: "custom-nav-item"%>
+      <%= link_to "퍼터", "/", class: "custom-nav-item"%>
+      <%= link_to "웨지", "/", class: "custom-nav-item"%>
     </div>
-    <div class="menu justify-around md:flex md:gap-6 hidden">
-      <%= link_to "Home", "/"%>
-      <%= link_to "Shop", "/"%>
-      <%= link_to "Cart", "/"%>
-      <%= link_to "Mypage", "/"%>
-    </div>
-    <form class="block">
-      <div class="search w-50 md:w-70 h-9 rounded-xl border border-gray-300 flex items-center overflow-hidden 
-              focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500
-              pl-3 pr-2">
-        <%= text_field_tag :search, nil, 
-          class: "border-none p-0 focus:ring-0 focus:outline-none grow bg-transparent h-full min-w-0", 
-          placeholder: "상품 검색"%>
-        <%= render "shared/icons/search", css_class: "w-6 h-auto fill-gray-300" %>
-      </div>
-    </form>
   </nav>
-</div>
+</header>

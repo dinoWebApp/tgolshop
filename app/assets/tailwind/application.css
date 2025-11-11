@@ -1,1 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap");
 @import "tailwindcss";
+@theme {
+  --font-family-sans: "Inter", "Noto Sans KR", sans-serif;
+
+  --color-theme-prime-dark: #0a0a0a;
+  --color-theme-secondary-dark: #1a1a1a;
+  --color-theme-accent-green: #10b981;
+  --color-theme-accent-gold: #facc15;
+  --color-theme-text-light: #e5e7eb;
+  --color-theme-text-muted: #a3a3a3;
+}
+
+.custom-nav-item-selected {
+  @apply text-base font-bold transition-colors duration-300 text-white;
+}
+
+.custom-nav-item {
+  @apply text-base font-bold transition-colors duration-300;
+
+  color: var(--color-theme-text-muted);
+}
+
+.custom-nav-item-exclusive {
+  @apply text-base font-bold transition-colors duration-300;
+
+  color: var(--color-theme-accent-gold);
+}
+
+.custom-nav-item:hover {
+  color: var(--color-theme-accent-green);
+}
+
+.custom-nav-item-selected:hover {
+  color: var(--color-theme-accent-green);
+}
+
+.custom-nav-item-exclusive:hover {
+  color: var(--color-theme-accent-green);
+}
