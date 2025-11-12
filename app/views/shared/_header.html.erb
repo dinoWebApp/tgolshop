@@ -1,13 +1,25 @@
 <header class="sticky top-0 z-50 w-full bg-theme-prime-dark/80 backdrop-blur-md border-b border-gray-800/50">
   <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
     <%# 로고 %>
-    <%= link_to "TGOLSHOP", "/", class: "text-3xl font-black text-white tracking-tighter" %>
+    <%= link_to "/", class: "text-3xl font-black text-theme-text-primary tracking-tighter" do %>
+      T<span class="text-theme-accent-gold">GOL</span>SHOP
+    <% end %>
     <%# PC 네비게이션 %>
-    <div class="hidden md:flex items-center space-x-8">
+    <div class="hidden lg:flex items-center space-x-8">
       <%= link_to "드라이버", "/", class: "custom-nav-item-selected"%>
       <%= link_to "아이언", "/", class: "custom-nav-item"%>
       <%= link_to "퍼터", "/", class: "custom-nav-item"%>
       <%= link_to "웨지", "/", class: "custom-nav-item"%>
+    </div>
+    <%# PC 아이콘 (lg 이상) %>
+    <div class="hidden lg:flex items-center space-x-5">
+      <%# 검색창 %>
+      <div class="relative">
+        <input type="text" placeholder="제품 검색..." class="bg-theme-secondary-dark text-theme-text-muted text-sm px-4 py-2 w-48 rounded-full border border-gray-800 focus:outline-none focus:ring-2 focus:ring-theme-accent-gold transition-all duration-300">
+        <button class="absolute top-1/2 -translate-y-1/2 right-3 hover:text-white text-theme-text-muted cursor-pointer">
+          <%= render "shared/icons/search", css_class: "w-5 h-5"%>
+        </button>
+      </div>
     </div>
   </nav>
 </header>
