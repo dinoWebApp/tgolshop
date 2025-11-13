@@ -20,6 +20,21 @@
           <%= render "shared/icons/search", css_class: "w-5 h-5"%>
         </button>
       </div>
+      <button class="text-theme-text-muted hover:text-white cursor-pointer">
+        <%= render "shared/icons/user", css_class: "h-6 w-6" %>
+      </button>
+      <button class="text-theme-text-muted hover:text-white cursor-pointer relative">
+        <%=render "shared/icons/cart", css_class: "h-6 w-6" %>
+        <span class="absolute -top-2 -right-2 rounded-full flex justify-center items-center bg-theme-accent-gold text-theme-prime-dark h-5 w-5 text-xs font-bold">3</span>
+      </button>
     </div>
+    <%# 모바일 메뉴 버튼 %>
+    <div class="flex items-center lg:hidden">
+      <button id="mobile-menu-btn" class="text-theme-text-muted hover:text-white cursor-pointer">
+        <%= render "shared/icons/bars" %>
+      </button>
+    </div>
+    <%# 모바일 메뉴 %>
+    <div id="mobile-menu" class="hidden "></div>
   </nav>
 </header>
