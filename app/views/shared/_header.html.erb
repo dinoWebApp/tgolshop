@@ -1,4 +1,4 @@
-<header class="sticky top-0 z-50 w-full bg-theme-prime-dark/80 backdrop-blur-md border-b border-gray-800/50">
+<header data-controller="mobile-menu" class="sticky top-0 z-50 w-full bg-theme-prime-dark/80 backdrop-blur-md border-b border-gray-800/50">
   <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
     <%# 로고 %>
     <%= link_to "/", class: "text-3xl font-black text-theme-text-primary tracking-tighter" do %>
@@ -6,10 +6,11 @@
     <% end %>
     <%# PC 네비게이션 %>
     <div class="hidden lg:flex items-center space-x-8">
-      <%= link_to "드라이버", "/", class: "custom-nav-item-selected"%>
-      <%= link_to "아이언", "/", class: "custom-nav-item"%>
-      <%= link_to "퍼터", "/", class: "custom-nav-item"%>
-      <%= link_to "웨지", "/", class: "custom-nav-item"%>
+      <%= link_to "전체상품", "/", class: "custom-nav-item-selected"%>
+      <%= link_to "드라이버", "/", class: "custom-nav-item"%>
+      <%= link_to "드라이버 헤드", "/", class: "custom-nav-item"%>
+      <%= link_to "샤프트", "/", class: "custom-nav-item"%>
+      <%= link_to "공지사항", "/", class: "custom-nav-item"%>
     </div>
     <%# PC 아이콘 (lg 이상) %>
     <div class="hidden lg:flex items-center space-x-5">
@@ -29,12 +30,29 @@
       </button>
     </div>
     <%# 모바일 메뉴 버튼 %>
-    <div class="flex items-center lg:hidden">
+    <div data-action="click->mobile-menu#mobile_menu" class="flex items-center lg:hidden">
       <button id="mobile-menu-btn" class="text-theme-text-muted hover:text-white cursor-pointer">
         <%= render "shared/icons/bars" %>
       </button>
     </div>
-    <%# 모바일 메뉴 %>
-    <div id="mobile-menu" class="hidden "></div>
   </nav>
+  <%# 모바일 메뉴 %>
+  <div data-mobile-menu-target="menu" id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-theme-prime-dark border-t border-gray-800 p-6 space-y-4">
+    <%= link_to "전체상품", "/", class: "custom-mobile-nav-item-selected"%>
+    <%= link_to "드라이버", "/", class: "custom-mobile-nav-item"%>
+    <%= link_to "드라이버 헤드", "/", class: "custom-mobile-nav-item"%>
+    <%= link_to "샤프트", "/", class: "custom-mobile-nav-item"%>
+    <%= link_to "공지사항", "/", class: "custom-mobile-nav-item"%>
+    <div class="border-t border-gray-700 pt-4 space-y-4">
+      <%= link_to "마이페이지", "/", class: "block text-base text-theme-text-muted hover:text-white"%>
+      <%= link_to "장바구니 (3)", "/", class: "block text-base text-theme-text-muted hover:text-white"%>
+      <%# 검색창 %>
+      <div class="relative pt-2">
+        <input type="text" placeholder="제품 검색..." class="bg-theme-secondary-dark text-theme-text-light placeholder-theme-text-muted text-sm px-4 py-2 w-full rounded-full border border-gray-800 focus:outline-none focus:ring-2 focus:ring-theme-accent-gold focus:border-transparent transition-all duration-300">
+        <button class="absolute top-1/2 right-3 pt-2 -translate-y-1/2 text-theme-text-muted hover:text-white">
+          <%= render "shared/icons/search", css_class: "h-5 w-5" %>
+        </button>
+      </div>
+    </div>
+  </div>
 </header>

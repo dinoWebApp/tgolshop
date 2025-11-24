@@ -21,20 +21,26 @@
   color: var(--color-theme-text-muted);
 }
 
+.custom-mobile-nav-item-selected {
+  @apply block text-lg font-bold transition-colors duration-300 text-white;
+}
+
+.custom-mobile-nav-item {
+  @apply block text-lg font-bold transition-colors duration-300;
+
+  color: var(--color-theme-text-muted);
+}
+
 .custom-nav-item-exclusive {
   @apply text-base font-bold transition-colors duration-300;
 
   color: var(--color-theme-accent-gold);
 }
 
-.custom-nav-item:hover {
-  color: var(--color-theme-accent-green);
-}
-
-.custom-nav-item-selected:hover {
-  color: var(--color-theme-accent-green);
-}
-
-.custom-nav-item-exclusive:hover {
+.custom-nav-item:hover,
+.custom-nav-item-selected:hover,
+.custom-mobile-nav-item:hover,
+.custom-nav-item-exclusive:hover,
+.custom-mobile-nav-item-selected:hover {
   color: var(--color-theme-accent-green);
 }
